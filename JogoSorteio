@@ -1,0 +1,28 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class JogoSorteio {
+
+    public static void main(String[] args) {
+        Random r = new Random();
+        
+        int tentativa = 1;
+        int numeroSorteado = r.nextInt(10);
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.print("Advinhe o numero : ");
+        int meuNumero = entrada.nextInt();
+        while (numeroSorteado != meuNumero) {
+            if (numeroSorteado > meuNumero) {
+                System.out.println("o numero sorteado é maior");
+            } else {
+                System.out.println("o numero sorteado é menor");
+            }
+            System.out.print("Digite o número : ");
+            meuNumero = entrada.nextInt();
+            tentativa++;
+        }
+        System.out.println("Você acertou na tentativa " + tentativa);
+        entrada.close();
+    }
+}
