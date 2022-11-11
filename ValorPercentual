@@ -1,0 +1,27 @@
+import java.util.Scanner;
+import java.util.Locale;
+
+public class ValorPercentual {
+
+    public static double retornaValorDesconto(double va, double pc) {
+        double vd = va * (pc / 100);
+        return vd;
+    }
+
+    public static double calcDesc(double va, double pc) {
+        double vd = va * (pc / 100);
+        return va - vd;
+    }
+
+    public static void main(String[] args) {
+        Locale.setDefault(Locale.US);
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Digite um valor ? ");
+        float valor = entrada.nextFloat();
+        System.out.println("Percentual  ");
+        float perc = entrada.nextFloat();
+        System.out.println("Desconto " + retornaValorDesconto(valor, perc));
+        System.out.println(valor + "  com desconto de " + perc + " % = " + calcDesc(valor, perc));
+        entrada.close();
+    }
+}
