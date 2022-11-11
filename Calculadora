@@ -1,0 +1,48 @@
+import java.util.Scanner;
+import java.util.Locale;
+
+public class Calculadora {
+
+    public static void main(String[] args) {
+        Locale.setDefault(Locale.US);
+        Scanner entrada = new Scanner(System.in);
+        int opcao;
+        do {
+            opcao = mostraMenu();
+            switch (opcao) {
+                case 1:
+                    System.out.println("\nVoce escolheu Somar");
+                    break;
+                case 2:
+                    System.out.println("\nVoce escolheu Subtração\n");
+                    break;
+                case 3:
+                    System.out.println("\nVoce escolheu Multiplicação\n");
+                    break;
+                case 4:
+                    System.out.println("\nVoce escolheu Divisão\n");
+                    break;
+                case 5:
+                    System.out.println("\nVoce escolheu Sair\n");
+                    break;
+                default:
+                    System.out.println("Opção invalida");
+                    break;
+            }
+
+        } while (opcao != 5);
+
+    }
+
+    public static int mostraMenu() {
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("====== M E N U =========");
+        System.out.println("1. Somar");
+        System.out.println("2. Subtração");
+        System.out.println("3. Multiplicação");
+        System.out.println("4. Divisão");
+        System.out.println("");
+        System.out.println("5. Sair");
+        return entrada.nextInt();
+    }
+}
